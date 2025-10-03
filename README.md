@@ -6,7 +6,7 @@ are fetched if the dependency is outside of the current working directory.
 See also the following GitHub issue: https://github.com/gruntwork-io/terragrunt/issues/4123
 
 ## Getting Started
-This Terragrunt configuration uses a local backend S3 to store TF state files under `_tf_state/`.
+This Terragrunt configuration uses a local backend to store TF state files under `_tf_state/`.
 
 The `run.sh` bash script sets the Terragrunt flags required to reproduce this bug.
 Note that if you don't enable `TG_USE_PARTIAL_PARSE_CONFIG_CACHE`, the configuration works as expected.
