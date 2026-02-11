@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-terragrunt --version
+_tg_version=$(terragrunt --version)
+echo "$_tg_version"
 echo "Directory: $1, action: $2"
 find . -type d -name ".terragrunt-cache" -prune -exec rm -rf {} \;
 echo "Deleted .terragrunt-cache directories"
@@ -20,4 +21,8 @@ export TG_NON_INTERACTIVE=true
 
 shift
 
-eval "terragrunt run-all $@"
+if [[ "$(echo $_tg_version | awk -F' ' '{print $NF}')" < "v0.88.0" ]]; then
+    eval "terragrunt run-all $@"
+else
+    eval "terragrunt run --all -- $@"
+fi
