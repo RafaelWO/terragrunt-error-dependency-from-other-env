@@ -46,7 +46,7 @@ Note that if you don't enable `TG_USE_PARTIAL_PARSE_CONFIG_CACHE`, the configura
 
 
 ## Affected Versions
-Terragrunt v0.71.1 - v0.88.1
+Terragrunt v0.71.1 - v1.0.0-rc1
 
 ## Testing environment
 * OS: Ubuntu 24.04.2 LTS x86_64
